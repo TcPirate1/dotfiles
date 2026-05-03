@@ -7,7 +7,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "MesloLGL Nerd Font Mono:size=12" ,"monospace:size=12" };
+static const char *fonts[]          = { "Hack Nerd Font:size=13" ,"monospace:size=13" };
 static const char dmenufont[]       = "monospace:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -34,7 +34,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -70,14 +70,18 @@ static const char *obsidian[] = { "obsidian" , NULL };
 static const char *writer[] = { "libreoffice", "--writer", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL }; // ctrl+a to capture entire screen, esc to leave any flameshot window
 static const char *flameshot_config[] = { "flameshot", "config", NULL };
+static const char *dwm_music_playlist[] = { "mpv", "--player-operation-mode=pseudo-gui", "--playlist=~/Music/Music/playlist.m3u", "--shuffle", NULL };
+static const char *qbittorrent[] = { "qbittorrent", "--no-splash", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,                       	XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && kill -42 $(pidof dwmblocks)") },
 	{ 0,                       	XF86XK_AudioMute, spawn, SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && kill -42 $(pidof dwmblocks)") },
 	{ 0,                       	XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && kill -42 $(pidof dwmblocks)") },
-	{ 0,				XK_Print,  spawn, 	   {.v = flameshot } },
+	{ ControlMask|ShiftMask,	XK_q,	   spawn,	   {.v = qbittorrent } },
+	{ MODKEY,			XK_F12,    spawn, 	   {.v = flameshot } },
 	{ ControlMask,			XK_F12,    spawn,	   {.v = flameshot_config } },
+	{ MODKEY, 			XK_m, 	   spawn,	   {.v = dwm_music_playlist } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_w,	   spawn,	   {.v = browser } },
