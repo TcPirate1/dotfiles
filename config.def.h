@@ -6,6 +6,8 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
+static const int horizpadbar        = 2;
+static const int vertpadbar         = 0;
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font:size=13" ,"monospace:size=13" };
 static const char dmenufont[]       = "monospace:size=14";
@@ -62,7 +64,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-b", "-i", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[] = { "ghostty", NULL };
 static const char *browser[] = { "firefox" , NULL };
 static const char *files[] = { "thunar" , NULL };
@@ -72,6 +74,7 @@ static const char *flameshot[] = { "flameshot", "gui", NULL }; // ctrl+a to capt
 static const char *flameshot_config[] = { "flameshot", "config", NULL };
 static const char *dwm_music_playlist[] = { "mpv", "--player-operation-mode=pseudo-gui", "--playlist=~/Music/Music/playlist.m3u", "--shuffle", NULL };
 static const char *qbittorrent[] = { "qbittorrent", "--no-splash", NULL};
+static const char *kiwix_desktop[] = { "kiwix-desktop", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
