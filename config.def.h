@@ -66,7 +66,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-b", "-i", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[] = { "ghostty", NULL };
-static const char *browser[] = { "firefox" , NULL };
+static const char *firefox[] = { "firefox" , NULL };
 static const char *files[] = { "thunar" , NULL };
 static const char *obsidian[] = { "obsidian" , NULL };
 static const char *writer[] = { "libreoffice", "--writer", NULL };
@@ -75,6 +75,7 @@ static const char *flameshot_config[] = { "flameshot", "config", NULL };
 static const char *dwm_music_playlist[] = { "mpv", "--player-operation-mode=pseudo-gui", "--playlist=~/Music/Music/playlist.m3u", "--shuffle", NULL };
 static const char *qbittorrent[] = { "qbittorrent", "--no-splash", NULL};
 static const char *kiwix_desktop[] = { "kiwix-desktop", NULL };
+static const char *vivaldi[] = {"vivaldi", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -87,10 +88,12 @@ static const Key keys[] = {
 	{ MODKEY, 			XK_m, 	   spawn,	   {.v = dwm_music_playlist } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,			XK_w,	   spawn,	   {.v = browser } },
+	{ MODKEY,			XK_w,	   spawn,	   {.v = firefox } },
 	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   {.v = files } },
 	{ MODKEY|ShiftMask,		XK_o,	   spawn,	   {.v = obsidian } },
 	{ MODKEY|ShiftMask,		XK_w,	   spawn,	   {.v = writer } },
+	{ ControlMask|ShiftMask		XK_w	   spawn,	   {.v = vivaldi } },
+	{ MODKEY|ShiftMask		XK_k	   spawn,	   {.v = kiwix_desktop } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
