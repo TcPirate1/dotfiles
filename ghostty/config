@@ -54,6 +54,5 @@ font-family="Hack Nerd Font Mono"
 theme=Catppuccin Mocha
 term=xterm-256color
 keybind = ctrl+q=close_window
-keybind = ctrl+c=copy_to_clipboard:mixed
 keybind = ctrl+o=open_config
 keybind = ctrl+r=reload_config
