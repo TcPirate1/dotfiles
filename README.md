@@ -1,10 +1,10 @@
 # Dotfiles
 Table of Contents:
-- DWM
-- NVIM
-- Ghostty
+- [DWM](#DWM)
+- [NVIM](#nvim)
+- [Ghostty](#ghostty)
 
-### DWM config file
+### DWM
 
 Personal config file for [dwm](https://dwm.suckless.org/) in `config.def.h`.
 `dwmblock_async_config` is well, the config for [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async).
@@ -16,7 +16,9 @@ There is also a repository for scripts that I use with dwmblocks-async [here](ht
 - [Centred title](https://dwm.suckless.org/patches/truecenteredtitle/) to well centre the title.
 
 ### nvim
-Text editor based on Vim. Uses kickstart-nvim repo as a base.
+Config files for the text editor [nvim](https://neovim.io/).
+
+Uses [kickstart-nvim](https://github.com/nvim-lua/kickstart.nvim) repo as a base.
 
 ### ghostty
-Terminal emulator config file.
+Configs for the terminal emulator, [ghostty](https://ghostty.org/).
