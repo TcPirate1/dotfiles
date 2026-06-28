@@ -1,0 +1,7 @@
+. /home/tc/.fehbg &
+xss-lock -- slock &
+thunar --daemon &
+dwmblocks &
+exec dwm
+
+# . same as source
