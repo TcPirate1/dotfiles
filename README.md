@@ -21,6 +21,8 @@ There is also a repository for scripts that I use with dwmblocks-async [here](ht
 Config files for the text editor [nvim](https://neovim.io/).
 
 Uses [kickstart-nvim](https://github.com/nvim-lua/kickstart.nvim) repo as a base.
+- Clipboards require a clipboard package to be installed.
+- Otherwise, `vim.g.clipboard = 'osc52'` will work fine for copy and pasting.
 
 ### ghostty
 Configs for the terminal emulator, [ghostty](https://ghostty.org/).
