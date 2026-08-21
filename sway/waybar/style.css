@@ -8,14 +8,14 @@
 /** ********** Fonts ********** **/
 * {
     font-family: "JetBrains Mono", "Symbols Nerd Font", Iosevka, archcraft, sans-serif;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 /** ********** Waybar Window ********** **/
 window#waybar {
     background-color: @background;
 	color: @background;
-    border-bottom: 2px solid @background-alt;
+    border-top: 2px solid @background-alt;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -42,6 +42,7 @@ window#waybar.geany {
 }
 
 #battery.charging {
+	color: @yellow;
 }
 
 #battery.plugged {
@@ -68,9 +69,9 @@ window#waybar.geany {
 
 /** ********** Sway ********** **/
 #workspaces {
-	background-color: @background-alt;
+	background-color: @magenta;
 	color: @foreground;
-	border-radius: 0px 8px 0px 0px;
+	border-radius: 8px;
 	padding: 4px;
 }
 
@@ -119,16 +120,6 @@ window#waybar.geany {
 #workspaces button#sway-workspace-1 {
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
 #mode {
     background-color: @background-alt;
 	color: @selected;
@@ -146,8 +137,6 @@ window#waybar.empty #window {
 /** ********** Tray ********** **/
 #tray {
 	background-color: @background-alt;
-	border-radius: 8px 0px 0px 0px;
-	padding: 4px 6px;
 }
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -206,6 +195,7 @@ window#waybar.empty #window {
 
 /** ********** Pulseaudio ********** **/
 #pulseaudio {
+	color: @magenta
 }
 #pulseaudio.bluetooth {
 }
@@ -256,6 +246,11 @@ window#waybar.empty #window {
 	color: @selected;
 }
 
+#custom-weather {
+	background-color: @backgrround-alt;
+	color: @magenta;
+}
+
 /** ********** Light Mode ********** **/
 #custom-lightmode {
     background-color: @background-alt;
@@ -272,9 +267,10 @@ window#waybar.empty #window {
 #clock,
 #pulseaudio,
 #network,
+#tray,
 #bluetooth {
     background-color: @background-alt;
-	color: @foreground;
+	color: @blue;
 }
 
 #backlight, 
@@ -287,6 +283,7 @@ window#waybar.empty #window {
 #custom-spotify,
 #pulseaudio,
 #network,
+#tray,
 #bluetooth,
 #custom-themes,
 #custom-lightmode {

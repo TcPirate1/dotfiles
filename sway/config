@@ -44,7 +44,7 @@ set $editor code .
 set $browser firefox
 set $wordprocessor libreoffice --writer
 
-set $rofi_bluetooth ~/.config/sway/scripts/rofi_bluetooth
+# set $rofi_bluetooth ~/.config/sway/scripts/rofi_bluetooth
 set $rofi_launcher ~/.config/sway/scripts/rofi_launcher
 set $rofi_music ~/.config/sway/scripts/rofi_mpd
 #set $rofi_music ~/.config/sway/scripts/rofi_spotify
@@ -61,6 +61,8 @@ exec_always ~/.config/sway/scripts/startup
 #exec_always ~/.config/sway/scripts/clamshell
 
 ##-- Keybindings -------------------------
+
+bindsym Control+$alt+d			exec swaymsg output eDP-1 toggle
 
 # -- Terminal : alacritty --
 bindsym $mod+Return 			exec $alacritty
@@ -98,7 +100,7 @@ bindsym $mod+n 					exec $rofi_network
 bindsym $mod+x 					exec $rofi_powermenu
 bindsym $mod+m 					exec $rofi_music
 bindsym $mod+s 					exec $rofi_screenshot
-bindsym $mod+b 					exec $rofi_bluetooth
+# bindsym $mod+b 					exec $rofi_bluetooth
 
 # -- Misc --
 bindsym $mod+p 					exec $colorpicker
@@ -131,7 +133,7 @@ bindsym $alt+Control+l 			exec "$lockscreen"
 ## Kill focused window
 ##
 bindsym $mod+q kill
-bindsym $mod+c kill
+# bindsym $mod+c kill
 
 #------
 
@@ -283,9 +285,9 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 ##-- Rules -------------------------------
-#assign [app_id="foot"] → workspace number 1
-#assign [class="firefox"] → workspace number 2
-#assign [app_id="thunar"] → workspace number 3
+assign [app_id="alacritty"] → workspace number 1
+assign [class="firefox"] → workspace number 2
+assign [app_id="thunar"] → workspace number 3
 #assign [app_id="geany"] → workspace number 4
 
 for_window [window_role="pop-up"] floating enable

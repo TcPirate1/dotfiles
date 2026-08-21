@@ -31,7 +31,7 @@ client.background        $sway_cl_col_bg
 ##-- Gtk themes ------------------------------
 set $sway_gtk_theme Sweet-Ambar-Blue
 set $sway_icon_theme Ars
-set $sway_cursor_theme Qogirr
+set $sway_cursor_theme Sweet
 set $sway_fonts Noto Sans 9
 
 set $gnome-schema org.gnome.desktop.interface

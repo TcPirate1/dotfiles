@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+toggle_location() {
+	# current_location = 0
+	# location_list = ("Christchurch", "Queenstown", "Wellington", "Auckland")
+
+	curl wttr.in/?format=4
+}
+
+if [[ "$1" == '--toggle' ]]; then
+	toggle_location()
+else
+	echo "Location wasn't changed."
+fi

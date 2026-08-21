@@ -23,8 +23,8 @@
     "ipc": true, 					// Control waybar with `swaymsg bar` commands
 
     // Type-2
-    "modules-left": ["sway/workspaces", "mpd", "idle_inhibitor", "custom/lightmode"],
-    //"modules-left": ["sway/workspaces", "custom/spotify", "idle_inhibitor", "custom/themes", "custom/lightmode"],
+    "modules-left": ["sway/workspaces", "mpd", "idle_inhibitor", "custom/lightmode", "custom/weather"],
+    //"modules-left": ["sway/workspaces", "custom/spotify", "idle_inhibitor", "custom/themes", "custom/lightmode", "tray"],
 	"modules-center": ["sway/mode", "sway/window"],
-    "modules-right": ["pulseaudio", "backlight" , "network", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight" , "tray", "battery", "clock"],
 }
