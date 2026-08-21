@@ -1,14 +1,32 @@
 #!/usr/bin/env bash
 
 toggle_location() {
-	# current_location = 0
-	# location_list = ("Christchurch", "Queenstown", "Wellington", "Auckland")
+	location_list=("Christchurch" "Queenstown" "Wellington" "Auckland")
+	STATE_FILE="$HOME/.config/sway/waybar/weather_location_cycle"
 
-	curl wttr.in/?format=4
+	if [[ -f "$STATE_FILE" ]]; then
+		index=$(cat "$STATE_FILE")
+	else
+		index=0
+	fi
+	curl -s 'wttr.in/'"${location_list[$index]}"'/?format=4'
+	index=$(( (index + 1) % ${#location_list[@]} ))
+	echo "$index" > "$STATE_FILE"
+}
+
+hover() {
+	location_list=("Christchurch" "Queenstown" "Wellington" "Auckland")
+
+	for i in "${location_list[@]}"
+	do
+		curl -s 'wttr.in/'{"$i","$i","$i","$i"}'/?format=4'
+	done
 }
 
 if [[ "$1" == '--toggle' ]]; then
-	toggle_location()
+	toggle_location
+elif [[ "$1" == '--hover' ]]; then
+	hover
 else
-	echo "Location wasn't changed."
+	curl -s 'wttr.in/Christchurch/?format=4'
 fi

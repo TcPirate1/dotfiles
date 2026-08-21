@@ -247,7 +247,7 @@ window#waybar.empty #window {
 }
 
 #custom-weather {
-	background-color: @backgrround-alt;
+	background-color: @background-alt;
 	color: @magenta;
 }
 

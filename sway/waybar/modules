@@ -74,9 +74,12 @@
 
 	// waybar-custom
     "custom/weather": {
-        "format": "{}",
-        "exec": "curl wttr.in/?format=4",
+        "format": {},
+        "interval": "3600",
+        "exec": "$HOME/.config/sway/waybar/weather",
         "on-click": "$HOME/.config/sway/waybar/weather --toggle",
+        "tooltip": true,
+        "tooltip-format": "I don't understand",
     },
 
     "custom/themes": {
