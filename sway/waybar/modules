@@ -79,7 +79,7 @@
         "exec": "$HOME/.config/sway/waybar/weather",
         "on-click": "$HOME/.config/sway/waybar/weather --toggle",
         "tooltip": true,
-        "tooltip-format": "I don't understand",
+        "tooltip-format": "Somehow hover other cities here",
     },
 
     "custom/themes": {
