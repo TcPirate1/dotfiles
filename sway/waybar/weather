@@ -1,30 +1,32 @@
 #!/usr/bin/env bash
 
-toggle_location() {
-	location_list=("Christchurch" "Queenstown" "Wellington" "Auckland")
-	STATE_FILE="$HOME/.config/sway/waybar/weather_location_cycle"
+# curl -s 'wttr.in/Christchurch/?format=4'
+LOCATIONS=(
+"Christchurch"
+"Queenstown"
+"Wellington"
+"Auckland"
+"Hamilton"
+)
 
-	if [[ -f "$STATE_FILE" ]]; then
-		index=$(cat "$STATE_FILE")
-	else
-		index=0
-	fi
-	curl -s 'wttr.in/'"${location_list[$index]}"'/?format=4'
-	index=$(( (index + 1) % ${#location_list[@]} ))
-	echo "$index" > "$STATE_FILE"
-}
+STATE_FILE="${XDG_RUNTIME_DIR:-/tmp}/weather-location"
 
-hover() {
-	location_list=("Christchurch" "Queenstown" "Wellington" "Auckland")
-
-	for i in "${location_list[@]}"
-	do
-		curl -s 'wttr.in/'{"$i","$i","$i","$i"}'/?format=4'
-	done
-}
-
-if [[ "$1" == '--toggle' ]]; then
-	toggle_location
-else
-	curl -s 'wttr.in/Christchurch/?format=4'
+# Create state file if it doesn't exist
+if [[ ! -f "$STATE_FILE" ]]; then
+    echo 0 > "$STATE_FILE"
 fi
+
+INDEX=$(<"$STATE_FILE")
+
+# Make sure the index is valid
+if (( INDEX < 0 || INDEX >= ${#LOCATIONS[@]} )); then
+    INDEX=0
+    echo "$INDEX" > "$STATE_FILE"
+fi
+
+LOCATION="${LOCATIONS[$INDEX]}"
+
+# Fetch and display weather
+curl -fsS --max-time 10 \
+    "https://wttr.in/${LOCATION}?format=4" \
+    2>/dev/null || echo "Weather unavailable"

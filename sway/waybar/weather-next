@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+LOCATIONS=(
+"Christchurch"
+"Queenstown"
+"Wellington"
+"Auckland"
+"Hamilton"
+)
+
+STATE_FILE="${XDG_RUNTIME_DIR:-/tmp}/weather-location"
+
+if [[ ! -f "$STATE_FILE" ]]; then
+    echo 0 > "$STATE_FILE"
+fi
+
+INDEX=$(<"$STATE_FILE")
+
+# Move to the next location
+INDEX=$(( (INDEX + 1) % ${#LOCATIONS[@]} ))
+
+echo "$INDEX" > "$STATE_FILE"
+
+# Tell Waybar to refresh the weather module
+pkill -RTMIN+8 waybar
