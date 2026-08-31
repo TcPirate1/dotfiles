@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
 
-LOCATIONS=(
-"Christchurch"
-"Queenstown"
-"Wellington"
-"Auckland"
-"Hamilton"
-)
-
 STATE_FILE="${XDG_RUNTIME_DIR:-/tmp}/weather-location"
 
-# Create state file if it doesn't exist
 if [[ ! -f "$STATE_FILE" ]]; then
     echo 0 > "$STATE_FILE"
 fi
@@ -25,8 +16,5 @@ fi
 
 LOCATION="${LOCATIONS[$INDEX]}"
 
-# Fetch and display weather
-curl -fsS --max-time 10 \
-    "https://wttr.in/${LOCATION}?format=4" \
-    2>/dev/null || echo "Weather unavailable"
+curl -fsS --max-time 10 "https://wttr.in/${LOCATION}" 2>/dev/null || echo "Weather unavailable"
 

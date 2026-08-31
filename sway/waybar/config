@@ -14,8 +14,8 @@
     "height": 35, 					// Waybar height (to be removed for auto height)
     "width": "", 					// Waybar width (empty for auto width)
     "spacing": 6, 					// Gaps between modules
-    "margin": 0, 					// Space around the bar
-    "margin-top": 5, 				// Space above the bar
+    "margin": 5, 					// Space around the bar
+    "margin-top": 0, 				// Space above the bar
     "margin-bottom": 0, 			// Space below the bar
     "margin-left": 0, 				// Space to the left of the bar
     "margin-right": 0, 				// Space to the right of the bar
@@ -23,7 +23,7 @@
     "ipc": true, 					// Control waybar with `swaymsg bar` commands
 
     // Type-2
-    "modules-left": ["sway/workspaces", "mpd", "idle_inhibitor", "custom/lightmode", "custom/weather"],
+    "modules-left": ["sway/workspaces", "custom/lightmode", "idle_inhibitor", "custom/weather"],
     //"modules-left": ["sway/workspaces", "custom/spotify", "idle_inhibitor", "custom/themes", "custom/lightmode", "tray"],
 	"modules-center": ["sway/mode", "sway/window"],
     "modules-right": ["pulseaudio", "backlight" , "tray", "battery", "clock"],
