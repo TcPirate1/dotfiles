@@ -63,6 +63,7 @@ exec_always ~/.config/sway/scripts/startup
 ##-- Keybindings -------------------------
 
 bindsym Control+$alt+d			exec swaymsg output eDP-1 toggle
+bindsym Control+$alt+t			exec swaymsg input type:touchpad events toggle
 
 # -- Terminal : alacritty --
 bindsym $mod+Return 			exec $alacritty
@@ -113,10 +114,10 @@ bindsym XF86AudioRaiseVolume 	exec "$volume --inc"
 bindsym XF86AudioLowerVolume 	exec "$volume --dec"
 bindsym XF86AudioMute 			exec "$volume --toggle"
 bindsym XF86AudioMicMute 		exec "$volume --toggle-mic"
-bindsym XF86AudioNext 			exec "mpc next"
-bindsym XF86AudioPrev 			exec "mpc prev"
-bindsym XF86AudioPlay 			exec "mpc toggle"
-bindsym XF86AudioStop 			exec "mpc stop"
+# bindsym XF86AudioNext 			exec "mpc next"
+# bindsym XF86AudioPrev 			exec "mpc prev"
+# bindsym XF86AudioPlay 			exec "mpc toggle"
+# bindsym XF86AudioStop 			exec "mpc stop"
 
 # -- Screenshots --
 bindsym Print 					exec "$screenshot --now"
@@ -286,7 +287,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 ##-- Rules -------------------------------
 assign [app_id="alacritty"] → workspace number 1
-assign [class="firefox"] → workspace number 2
+assign [app_id="firefox"] → workspace number 2
 assign [app_id="thunar"] → workspace number 3
 #assign [app_id="geany"] → workspace number 4
 

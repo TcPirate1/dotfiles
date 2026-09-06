@@ -79,7 +79,7 @@
         "signal": 8,
         "exec": "$HOME/.config/sway/waybar/weather",
         "on-click": "$HOME/.config/sway/waybar/weather-next",
-        "tooltip-format": "$HOME/.config/sway/weather-hover"
+        "tooltip": true,
     },
 
     "custom/themes": {

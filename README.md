@@ -23,6 +23,7 @@ Config files for [Sway, the WM](https://swaywm.org/). Alacritty, the terminal. W
 Comes from [archcraft's](https://wiki.archcraft.io/docs/wayland-compositors/sway/) but with slight changes.
 - Works differently from DWM on how it places it's windows. Only has horizontal and vertical when opening, which can then be rearranged.
 - Removed bluetooth packages and operations from waybar.
+- Alacritty uses it's own clipboard and there doesn't seem to be an option to change out the clipboard package.
 
 ### nvim
 Config files for the text editor [nvim](https://neovim.io/).
@@ -39,4 +40,5 @@ Configs for the terminal emulator, [ghostty](https://ghostty.org/).
 Configs for the windows shell, [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.6).
 
 ### Terminal Themes
-- Oh my posh night-owl theme. Atomic is good if the terminal size is large enough.
+- Oh my posh night-owl theme. Atomic is good if the terminal size is large enough for dev purposes.
+- Really enjoying catppuccin-mocha for something that doesn't any extra status like Raspberry Pi.

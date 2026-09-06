@@ -25,8 +25,6 @@ fi
 
 LOCATION="${LOCATIONS[$INDEX]}"
 
-# Fetch and display weather
-curl -fsS --max-time 10 \
-    "https://wttr.in/${LOCATION}?format=4" \
-    2>/dev/null || echo "Weather unavailable"
+curl -fsS --max-time 10 "https://wttr.in/${LOCATION}?format=4" 2>/dev/null
+# try use <tt></tt> like how clock does to format output. Use the same formatting as the example's for the json output.
 

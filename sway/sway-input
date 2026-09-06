@@ -11,11 +11,7 @@ input "*" {
     natural_scroll disabled
     middle_emulation enabled
 	pointer_accel 0.2
-}
-
-input "type:pointer" {
-  accel_profile "flat"
-  pointer_accel 0.2
+    accel_profile "flat"
 }
 
 input "type:keyboard" xkb_numlock enabled
