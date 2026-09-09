@@ -41,4 +41,4 @@ Configs for the windows shell, [PowerShell](https://learn.microsoft.com/en-us/po
 
 ### Terminal Themes
 - Oh my posh night-owl theme. Atomic is good if the terminal size is large enough for dev purposes.
-- Really enjoying catppuccin-mocha for something that doesn't any extra status like Raspberry Pi.
+- Really enjoying catppuccin-mocha for something that doesn't any extra status like Raspberry Pi. Have modified it to include niceites from other themes.
