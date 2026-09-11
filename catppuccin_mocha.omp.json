@@ -58,12 +58,14 @@
       "alignment": "right",
       "segments": [
         {
+          "foreground": "#FFE873",
           "style": "plain",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
           "type": "python"
         },
         {
           "options": {
+            "foreground": "#3C873A",
             "fetch_package_manager": true,
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
             "yarn_icon": " <#348cba>\ue6a7</>"
