@@ -6,6 +6,8 @@ Table of Contents:
 - [Ghostty](#ghostty)
 - [PowerShell](#powershell)
 - [Terminal Themes](#terminal%20themes)
+- [Login](#sddm)
+- [Lock screen](#hyprlock)
 
 ### DWM
 
@@ -42,3 +44,15 @@ Configs for the windows shell, [PowerShell](https://learn.microsoft.com/en-us/po
 ### Terminal Themes
 - Oh my posh night-owl theme. Atomic is good if the terminal size is large enough for dev purposes.
 - Really enjoying catppuccin-mocha for something that doesn't any extra status like Raspberry Pi. Have modified it to include niceites from other themes.
+
+### SDDM
+- https://github.com/TcPirate1/TTGL-SDDM has the configs including images, files and setup required for SDDM.
+
+### hyprlock
+- Using default ArchCraft file for this.
+
+### Grub theme
+- https://github.com/SiriusAhu/Persona_5_Royal_Grub_Themes for the boot loader (the thing that shows OS avaliable and you tell it which one to boot into)
+
+### Plymouth
+- The loading screen before bootloader shows up. Using pixels from https://github.com/adi1090x/plymouth-themes
