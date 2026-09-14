@@ -64,8 +64,8 @@
           "type": "python"
         },
         {
-          "options": {
-            "foreground": "#3C873A",
+          "foreground": "#3C873A",
+          "options": { 
             "fetch_package_manager": true,
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
             "yarn_icon": " <#348cba>\ue6a7</>"
