@@ -43,6 +43,7 @@ set $files thunar
 set $editor code .
 set $browser firefox
 set $wordprocessor libreoffice --writer
+set $torrent qbittorrent
 
 # set $rofi_bluetooth ~/.config/sway/scripts/rofi_bluetooth
 set $rofi_launcher ~/.config/sway/scripts/rofi_launcher
@@ -84,8 +85,9 @@ bindsym $mod+$alt+Return 		exec $alacritty -F
 # -- GUI Apps --
 bindsym $mod+Shift+f 			exec $files
 bindsym $mod+Shift+e 			exec $editor
-bindsym $mod+w 			exec $browser
-bindsym $mod+Shift+w    exec $wordprocessor
+bindsym $mod+w 				exec $browser
+bindsym $mod+Shift+w			exec $wordprocessor
+bindsym $mod+b				exec $torrent
 
 # -- CLI Apps --
 # bindsym $alt+Control+v 			exec --no-startup-id "$open_in_alacritty -e vim"
@@ -96,7 +98,7 @@ bindsym $alt+Control+h 			exec --no-startup-id "$open_in_alacritty -e htop"
 bindsym $alt+F1 				exec $rofi_launcher
 bindsym $alt+F2 				exec $rofi_runner
 bindsym $mod+d	 				exec $rofi_launcher
-bindsym $mod+r	 				exec $rofi_asroot
+# bindsym $mod+r	 				exec $rofi_asroot
 bindsym $mod+n 					exec $rofi_network
 bindsym $mod+x 					exec $rofi_powermenu
 bindsym $mod+m 					exec $rofi_music
@@ -143,13 +145,16 @@ bindsym $mod+q kill
 set $send-notify exec --no-startup-id notify-send -u low -h string:x-canonical-private-synchronous:swayconfig
 
 ## Splitting containers
-##
+
 ## split in horizontal orientation
 bindsym $mod+h split horizontal, $send-notify 'Split Horizontally'
 ## split in vertical orientation
 bindsym $mod+v split vertical, $send-notify 'Split Vertically'
 ## toggle split
 bindsym $mod+g split toggle, $send-notify 'Split Mode'
+
+## Tmux
+# set $tmux-color exec tmux -2uV
 
 #------
 

@@ -173,6 +173,9 @@ do
   -- instead raise a dialog asking if you wish to save the current file(s)
   -- See `:help 'confirm'`
   vim.o.confirm = true
+
+  vim.o.linebreak = true
+  -- https://neovim.io/doc/user/usr_25/ (this should shift entire word to next line even if only part of the word hits window barrier)
 end
 
 -- ============================================================
@@ -740,7 +743,8 @@ do
   local servers = {
     -- clangd = {},
     -- gopls = {},
-    -- pyright = {},
+    pyright = {},
+    ts_ls = {},
     -- tsc = {},
     --
     -- Some languages (like rust) have entire language plugins that can be useful:

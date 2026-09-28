@@ -1,4 +1,6 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export EDITOR=nvim
+source <(fzf --zsh)
 
 # ^[[F^[[H^
 bindkey "^[[H" beginning-of-line
@@ -40,3 +42,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/catppuccin_mocha.omp.json)"
 fi
+
+alias ls='ls -A --color=auto'
+alias fzf='fzf --preview="cat {}"'
+alias find='nvim $(fzf -m --preview="cat {}")'
