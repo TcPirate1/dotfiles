@@ -5,7 +5,7 @@ source <(fzf --zsh)
 # ^[[F^[[H^
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
-bindkey "^[[3" delete-char
+bindkey "^[[3~" delete-char
 
 # Start ssh-agent if one isn't already running.
 if [[ "$SSH_AUTH_SOCK" || "$SSH_AGENT_PID" ]]; then
