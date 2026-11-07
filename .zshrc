@@ -45,6 +45,5 @@ fi
 
 alias ls='ls -A --color=auto'
 alias fzf='fzf --preview="cat {}"'
-alias find='nvim $(fzf -m --preview="cat {}")'
 alias rm='rm -i'
 alias rmrf='rm -rfi'
